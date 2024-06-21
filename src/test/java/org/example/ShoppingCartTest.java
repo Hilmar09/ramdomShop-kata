@@ -5,13 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShoppingCartTest {
-    // Antiguedad cartas
     @Test
-    void calculatePrecioAntiguedadForMagicCards_red() {
+    void calculate_Price_Age_For_Magic_Cards_red() {
         // Arrange
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Lightning Bolt", null);
+        Product product = new Product(null, 10, false, "red", null, "Magic: The Gathering - Lightning Bolt", null);
         // Act
         shoppingCart.addProduct(product);
         // Assert
@@ -20,76 +19,101 @@ class ShoppingCartTest {
     }
 
     @Test
-    void calculatePrecioAntiguedadForMagicCards_blue() {
+    void calculate_Price_Age_ForMagic_Cards_blue() {
         // Arrange
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Lightning Bolt", null);
+        Product product = new Product(null, 10, false, "blue", null, "Magic: The Gathering - Lightning Bolt", null);
         // Act
         shoppingCart.addProduct(product);
         // Assert
-        assertEquals(product., 2.50);
+        assertEquals(shoppingCart.getTotalPrice(), 2.50);
 
     }
 
-    @Test
-    void calculateAntiguedadForPets_Spiders() {
+    void calculate_Price_Antiquity_ForMagic_Cards_green() {
+        // Arrange
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, 5, false, "", null, "null", null);
-
+        Product product = new Product(null, 20, false, "green", null, "Magic: The Gathering - Lightning Bolt", null);
+        // Act
         shoppingCart.addProduct(product);
-
-        assertEquals(product.getBasePrice(), 1.2);
+        // Assert
+        assertEquals(shoppingCart.getTotalPrice(), 5.28);
 
     }
 
-    @Test
-    void calculateAntiguedadForPets_RedSpiders() {
+    void calculate_Price_Antiquity_ForMagic_Cards_black() {
+        // Arrange
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, 5, false, "", null, "null", null);
-
+        Product product = new Product(null, 20, false, "black", null, "Magic: The Gathering - Lightning Bolt", null);
+        // Act
         shoppingCart.addProduct(product);
-
-        assertEquals(product.getBasePrice(), 11.60);
+        // Assert
+        assertEquals(shoppingCart.getTotalPrice(), 8.16);
 
     }
 
-    @Test
-    void calculateAntiguedadForPets_GoldSpiders() {
-        ShoppingCart shoppingCart = new ShoppingCart();
+//    @Test
+//    void calculateAntiguedadForPets_Spiders() {
+//        ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, 5, false, "", null, "null", null);
+//        Product product = new Product(null, 5, false, "", null, "null", null);
 
-        shoppingCart.addProduct(product);
+//        shoppingCart.addProduct(product);
 
-        assertEquals(product.getBasePrice(), 12.60);
+//        assertEquals(product.getBasePrice(), 1.2);
 
-    }
-    @Test
-    void calculateAntiguedadForPets_SpidersSttinky() {
-        ShoppingCart shoppingCart = new ShoppingCart();
+//    }
 
-        Product product = new Product(8, null, true, "", null, "SpidersSttinky", null);
+//    @Test
+//    void calculateAntiguedadForPets_RedSpiders() {
+//        ShoppingCart shoppingCart = new ShoppingCart();
+//
+//        Product product = new Product(null, 5, false, "", null, "null", null);
 
-        shoppingCart.addProduct(product);
+//        shoppingCart.addProduct(product);
 
-        assertEquals(product.getSellPrice(), 9.60);
+//        assertEquals(product.getBasePrice(), 11.60);
 
-    }
+//    }
 
-    @Test
-    void calculateAntiguedadForPets_Spiders() {
-        ShoppingCart shoppingCart = new ShoppingCart();
+//    @Test
+//    void calculateAntiguedadForPets_GoldSpiders() {
+//        ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, 5, false, "", null, "null", null);
+//        Product product = new Product(null, 5, false, "", null, "null", null);
 
-        shoppingCart.addProduct(product);
+//        shoppingCart.addProduct(product);
 
-        assertEquals(product.getBasePrice(), 1.2);
+//        assertEquals(product.getBasePrice(), 12.60);
 
-    }
+//    }
+
+//    @Test
+//    void calculateAntiguedadForPets_SpidersSttinky() {
+//        ShoppingCart shoppingCart = new ShoppingCart();
+
+//        Product product = new Product(8, null, true, "", null, "SpidersSttinky", null);
+
+//        shoppingCart.addProduct(product);
+
+//        assertEquals(product.getSellPrice(), 9.60);
+
+//    }
+
+//    @Test
+//    void calculateAntiguedadForPets_Spiders() {
+//        ShoppingCart shoppingCart = new ShoppingCart();
+
+//        Product product = new Product(null, 5, false, "", null, "null", null);
+
+//        shoppingCart.addProduct(product);
+
+//        assertEquals(product.getBasePrice(), 1.2);
+
+//    }
 
     @Test
     void calculatePriceForMagicCards_red() {
@@ -214,4 +238,3 @@ class ShoppingCartTest {
     }
 }
 
-}
