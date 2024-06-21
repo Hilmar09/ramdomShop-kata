@@ -2,14 +2,12 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import java.math.BigDecimal;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShoppingCartTest {
     // Antiguedad cartas
     @Test
-    void calculate_precio_antiguedad_for_magic_cards_red() {
+    void calculate_Price_Age_For_Magic_Cards_red() {
         // Arrange
         ShoppingCart shoppingCart = new ShoppingCart();
 
@@ -22,7 +20,7 @@ class ShoppingCartTest {
     }
 
     @Test
-    void calculate_Precio_antiguedad_for_magic_cards_blue() {
+    void calculate_Price_Age_ForMagic_Cards_blue() {
         // Arrange
         ShoppingCart shoppingCart = new ShoppingCart();
 
@@ -30,7 +28,7 @@ class ShoppingCartTest {
         // Act
         shoppingCart.addProduct(product);
         // Assert
-        assertEquals(shoppingCart.getTotalPrice(),2.50);
+        assertEquals(shoppingCart.getTotalPrice(), 2.50);
 
     }
 
@@ -47,11 +45,17 @@ class ShoppingCartTest {
     }
     @Test
     void calculate_for_pets() {
+    void calculate_Price_Antiquity_ForMagic_Cards_green() {
+        // Arrange
         ShoppingCart shoppingCart = new ShoppingCart();
 
+        Product product = new Product(null, 20, false, "green", null, "Magic: The Gathering - Lightning Bolt", null);
+        // Act
         Product product = new Product(4, null,false,null, null, null,null);
 
         shoppingCart.addProduct(product);
+        // Assert
+        assertEquals(shoppingCart.getTotalPrice(), 5.28);
 
         assertEquals(shoppingCart.getTotalPrice(),16.80);
 
@@ -59,23 +63,37 @@ class ShoppingCartTest {
 
     @Test
     void calculate_for_pets_red_spiders() {
+    void calculate_Price_Antiquity_ForMagic_Cards_black() {
+        // Arrange
         ShoppingCart shoppingCart = new ShoppingCart();
 
         Product product = new Product(8, null,false,"Red",null,"Spiders",null);
 
+        Product product = new Product(null, 20, false, "black", null, "Magic: The Gathering - Lightning Bolt", null);
+        // Act
         shoppingCart.addProduct(product);
 
         assertEquals(shoppingCart.getTotalPrice(),11.60);
+        // Assert
+        assertEquals(shoppingCart.getTotalPrice(), 8.16);
 
     }
 
     @Test
     void calculate_for_pets_gold_spiders() {
         ShoppingCart shoppingCart = new ShoppingCart();
+//    @Test
+//    void calculateAntiguedadForPets_Spiders() {
+//        ShoppingCart shoppingCart = new ShoppingCart();
+
+//        Product product = new Product(null, 5, false, "", null, "null", null);
+
+//        shoppingCart.addProduct(product);
 
         Product product = new Product(8, null,false,"Gold",null,"Spiders",null);
+//        assertEquals(product.getBasePrice(), 1.2);
 
-        shoppingCart.addProduct(product);
+//    }
 
         assertEquals(shoppingCart.getTotalPrice(),12.60);
 
